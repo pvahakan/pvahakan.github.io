@@ -1,0 +1,24 @@
+<style>
+    ul.navbar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        padding-top: 200px;
+        width: 15%;
+        background-color: lightslategray;
+        height: 100%;
+        position: fixed;
+        overflow: auto;
+    }
+    li.navbar {
+        margin: 5px;
+        border: 1px solid black;
+    }
+</style>
+<ul class="navbar">
+    <li class="navbar"><a href="/">Etusivu</a></li>
+    {% for post in site.posts %}
+    <li class="navbar"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>
+    {% endfor %}
+    <li class="navbar"><a href="/about">About</a></li>
+</ul>
