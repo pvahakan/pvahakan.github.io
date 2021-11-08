@@ -13,9 +13,27 @@
     li.navbar {
         margin: 5px;
         border: 1px solid black;
+        border-radius: 5px;
+        background-color: #ccccff;
+    }
+    li.navbar a {
+        display: block;
+        color: black;
+        padding-left: 5px;
+    }
+    li.navbar:hover {
+        background-color: #6666ff;
+    }
+    li.title {
+        font-size: x-large;
+        color: black;
+        margin-left: 5px;
+        margin-right: 5px;
+        border-bottom: 2px solid black;
     }
 </style>
 <ul class="navbar">
+    <li class="title">Sisältö</li>
     <li class="navbar"><a href="/">Etusivu</a></li>
     {% for post in site.posts %}
     <li class="navbar"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>
