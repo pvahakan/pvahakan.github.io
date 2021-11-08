@@ -1,0 +1,316 @@
+# Lisää muuttujista
+
+Muuttuja on paikka, jonne tallennetaan tietoa. Muuttujaan tallennettua tietoa voidaan käyttää myöhemmin ohjelmassa uudelleen. Tallensimme aiemmin muuttujaan komennon ``input`` avulla kysytyn syötteen jonka tulostimme myöhemmin näytölle.
+
+```python
+nimi = input('Anna nimesi: ')
+print('Moi, ' + nimi)
+```
+
+```
+Anna nimesi: Python
+Moi, Python
+```
+
+Muuttujille voidaan antaa arvoja suoraan ohjelmassa. Esimerkiksi ohjelma
+
+```python
+etunimi = 'Python'
+sukunimi = 'Koodaaja'
+
+nimi = etunimi + ' ' + sukunimi
+print(nimi)
+```
+
+tulostaisi näytölle
+
+```
+Python Koodaaja
+```
+
+## Muuttujien arvon muuttaminen
+
+Nimensä mukaisesti muuttujan arvo voi muuttua. Jos muuttujan arvoa muutetaan, vanha arvo ylikirjoitetaan.
+
+```python
+sana = input('Anna sana: ')
+print(sana)
+
+sana = input('Anna sana: ')
+print(sana)
+
+sana = 'kolmas'
+print(sana)
+```
+
+```
+Anna sana: eka
+eka
+Anna sana: toka
+toka
+kolmas
+```
+
+Ohjelmoinnissa ``=`` merkki tarkoittaa hieman eri asiaa, kun matematiikassa. Se kannattaa ajatella sanana "sijoitetaan". Esimerkiksi
+
+```python
+sana = 'sana'
+```
+
+kannattaa ajatella lauseena "muuttujaan sana sijoitetaan arvo 'sana'". Matematiikasta tuttu "on yhtä suuri kuin" kirjoitetaan Pythonissa (ja monessa muussakin ohjelmointikielessä) kahdella on-merkillä eli ``==``. Palaamme tähän myöhemmin.
+
+Muuttujan arvoa voi muuttaa myös sen vanhaan arvoon perustuen.
+
+```python
+sana = input('Anna sana: ')
+print(sana)
+
+sana = sana + '!!!'
+print(sana)
+```
+
+```
+Anna sana: sana
+sana
+sana!!!
+```
+
+Yllä oleva ohjelma ja sen tulostus on helppo ymmärtää, kun ajattelee ``=``-merkin sijoitusoperaattorina (jota se itseasiassa Pythonissa onkin). Ohjelman kolmannella rivillä muuttujan ``sana`` arvoksi *sijoitetaan* ``sana + '!!!'`` eli muuttujan ``sana`` aikaisempi arvo, johon on lisätty kolme huutomerkkiä.
+
+## Kokonaisluvut
+
+Muuttujiin voidaan tallettaa myös muuta tietoa, kuin merkkijonoja. Jos muuttujaan talletetaan kokonaisluku, sen ympärille ei laiteta lainausmerkkejä. Seuraavassa esimerkissä muuttujat ``luku1`` ja ``luku2`` tulostuvat samalla tavalla, mutta niiden sisältö on eri.
+
+```python
+luku1 = 100
+luku2 = '100'
+
+print(luku1)
+print(luku2)
+```
+
+```
+100
+100
+```
+
+Muuttujien eron huomaa selkeämmin niiden käyttäytymisestä. Ohjelman
+
+```python
+luku1 = 100
+luku2 = '100'
+
+print(luku1 + luku1)
+print(luku2 + luku2)
+```
+
+tulostus on seuraava
+
+```
+200
+100100
+```
+
+Jos muuttujan tyyppi on kokonaisluku, ``+``-operaattori merkitsee yhteenlaskua. Merkkijonojen tapauksessa ``+``-operaattori yhdistää kaksi merkkijonoa perkkäin.
+
+## Tyyppimuunnokset
+
+Kahden erityyppisen arvon yhdistäminen ei onnistu Pythonissa. Jos haluamme yhdistää merkkijonon ja lukuarvon, pitää lukuarvo muuttaa ensin merkkijonoksi. Se onnistuu komennolla ``str``.
+
+```python
+tulos = 10 * 25
+print('Tulos on: ' + str(tulos))
+```
+
+Yllä olevassa ohjelmassa muuttujaan ``tulos`` talletetaan laskun ``10 * 25`` tulos. Tulos tulostetaan yhdessä merkkijonon kanssa, jolloin kokonaisluku on pakko muuttaa merkkijonoksi. Nyt ohjelman tulostus on seuraava
+
+```
+Tulos on: 250
+```
+
+Jos tyyppimuunnos (``str``-komento) unohtuu, ohjelma ei tulosta mitään vaan antaa virheilmoituksen
+
+```
+TypeError: unsupported operand type(s) for +: 'str' and 'int'
+```
+
+Pythonissa on toinenkin tapa yhdistellä erityyppistä tietoa ``print``-komennossa.
+
+```python
+tulos = 10 * 25
+print('Tulos on:', tulos)
+```
+
+```
+Tulos on: 250
+```
+
+Pilkulla erotellessa ``print``-komento tulostaa kaikki erityyppiset arvot. Huomaa kuitenkin, että arvojen väliin ilmestyy yksi välilyönti.
+
+## Liukuluvut
+
+Liukuluku on ohjelmoinnissa usein käytetty termi, joka tarkoittaa desimaalilukua. Liukulukujen käyttö on hyvin samanlaista kuin kokonaisulukujen. Liukuluvuissa täytyy huomioida, että desimaalieroitin on **piste** ``.`` eikä pilkku, kuten koulussa olemme tottuneet desimaalilukujen yhteydessä. Kokonaisluvut ja liukuluvut voivat olla myös negatiivisia. Negatiivisen luvun eteen lisätään normaalisti ``-`` merkki.
+
+***
+
+## Tehtäviä
+
+1. Tee ohjelma, joka laskee muuttujaan ``vuosi_sekunteina`` kuinka monta sekuntia on vuodessa. Sen jälkeen tulosta luku. Esimerkkitulostus
+```
+Vuodessa on xxxxxxx sekuntia
+```
+2. Tee ohjelma, jossa on muuttujat ``x = 27`` ja ``y = 15``. Kirjoita ohjelma siten, että sen tulostus on täsmälleen seuraavan kaltainen:
+```
+24 + 17 = 42
+27 - 15 = 12
+27 * 15 = 405
+27 / 15 = 1.8
+```
+Ohjelman tulee toimia, vaikka muuttujien ``x`` ja ``y`` arvot vaihdetaan.
+
+***
+
+# Laskentaa luvuilla
+
+Pythonia voi käyttää laskimena, sillä se sisältää kaikki peruslaskutoimituksiin tarvittavat operaattorit. Alla on listattu kaikki Pythonin peruslaskutoimitukset ja niitä vastaavat operaattorit.
+
+```
++ yhteenlasku
+- vähennyslasku
+* kertolasku
+/ jakolasku (liukuluku), esim 9 / 2 --> 4.5
+// jakolasku (kokonaisluku) esim. 9 / 2 --> 4
+% jakojäännös, esim. 9 % 2 --> 1
+** potenssi
+```
+
+Muista matematiikasta tutut laskujärjestyssäännöt. Python laskee laskujärjestyssääntöjen mukaan ja järjestyksestä voi poiketa käyttämällä sulkeita, ihan kuten matikassa.
+
+## Lukuarvojen lukeminen
+
+Olemme lukeneet käyttäjältä syötteenä merkkijonoja. Myös lukuja voidaan kysä käyttäjältä samaa ``input``-funktiota käyttäen. Jos käyttäjältä kysyttyä lukua halutaan käyttää laskennassa, täytyy sen tyyppi muuttaa itse luvuksi. Kokonaisluvuksi muuttaminen tapahtuu ``int``-funktiolla.
+
+```python
+syote = input('Minä vuonna olet syntynyt? ')
+vuosi = int(syote)
+
+print('Ikäsi vuoden 2021 lopussa on', 2021 - vuosi)
+```
+
+```
+Minä vuonna olet syntynyt? 2005
+Ikäsi vuoden 2021 lopussa on 16
+```
+
+Funktioita voi ketjuttaa peräkkäin ja yllä oleva ohjelma kannattaisikin kirjoittaa muodossa
+
+```python
+vuosi = int(input('Minä vuonna olet syntynyt? '))
+
+print('Ikäsi vuoden 2021 lopussa on', 2021 - vuosi)
+```
+
+Näin säästytään ylimääräiseltä muuttujalta.
+
+Funktio ``int`` muuttaa siis minkä tahansa (muutettavissa olevan) tyypin kokonaisluvuksi. Jos haluaisimme käsitellä lukua liukulukuna, muunnos onnistuisi ``float``funktiolla, joka toimii samalla tavalla kuin ``int`` ja vähän aiemmin käytetty ``str``.
+
+## Muuttujien käytöstä
+
+Tarkastellaan ohjelmaa, joka laskee kolmen käyttäjän syöttämän luvun summan:
+
+```python
+luku1 = int(input('Ensimmäinen luku: '))
+luku2 = int(input('Toinen luku: '))
+luku3 = int(input('Kolmas luku: '))
+
+summa = luku1 + luku2 + luku3
+print('Lukujen summa on', summa)
+```
+
+Ohjelmassa käytetään neljää eri muuttujaa. Vähemmälläkin pärjättäisiin:
+
+```python
+summa = 0
+
+luku = int(input('Ensimmäinen luku: '))
+summa = summa + luku
+
+luku = int(input('Toinen luku: '))
+summa = summa + luku
+
+luku = int(input('Kolmas luku: '))
+summa = summa + luku
+
+print('Lukujen summa on', summa)
+```
+
+Usein on sellainen tilanne, että jotakin lukua halutaan kasvattaa tietyllä määrällä, kuten ``summa = summa + luku``. Tähän on olemassa Pythonissa oma lyhennyskomentonsa ``summa += luku``. Molemmat edellä olevat tarkoittavat samaa asiaa, muuttujan ``summa`` arvo kasvaa muuttujan ``luku`` arvon verran. Yllä oleva ohjelma saataisiin lyhennettyä muotoon
+
+```python
+summa = 0
+
+luku = int(input('Ensimmäinen luku: '))
+summa += luku
+
+luku = int(input('Toinen luku: '))
+summa += luku
+
+luku = int(input('Kolmas luku: '))
+summa += luku
+
+print('Lukujen summa on', summa)
+```
+
+Oikeastaan myös muuttuja ``luku`` on turha, sillä sitä käytetään ainoastaan muuttujan ``summa`` kasvattamiseen. Koodinpätkää voisi vielä yksinkertaistaa poistamalla muuttujan ``luku`` kokonaan.
+
+```python
+summa = 0
+
+summa += int(input('Ensimmäinen luku: '))
+summa += int(input('Toinen luku: '))
+summa += int(input('Kolmas luku: '))
+
+print('Lukujen summa on', summa)
+```
+
+Joskus ylimääräisten apumuuttujien käyttö on perusteltua, mutta yleensä koodi kannattaa pitää mahdollsimman tiiviinä. **Tärkeää on kuitenkin, että muuttujien nimeäminen on mahdollisimman kuvaavaa!**
+
+***
+
+## Tehtäviä
+
+1. Tee ohjelma, joka kysyy käyttäjältä lukua. Ohjelma tulostaa luvun kerrottuna viidellä. Esimerkkitulostus (käyttäjä syöttänyt luvun 3):
+```
+Anna luku: 3
+Kun kerrotaan luku 3 luvulla 5, saadaan 15
+```
+2. Tee ohjelma, joka kysyy käyttäjältä nimen ja syntymävuoden. Ohjelma tulostaa, kuinka vanha henkilö on vuoden 2021 lopussa.
+```
+Nimesi: Keke
+Syntymävuotesi: 1964
+Moi Keke! Olet 57 vuotta vanha vuoden 2021 lopussa.
+```
+3. Tee ohjelma, joka kysyy käyttäjältä vuorokausien lukumäärän. Ohjelma tulostaa annettujen vuorokausien määrän sekunteina.
+```
+Kuinka monen vuorokauden sekunnit tulostetaan? 1
+86400
+```
+```
+Kuinka monen vuorokauden sekunnit tulostetaan? 7
+604800
+```
+4. Tee ohjelma, joka kysyy käyttäjältä kaksi lukua. Ohjelma tulostaa lukujen summan ja tulon. Esimerkkitulostus:
+```
+Luku 1: 3
+Luku 2: 7
+Lukujen summa on 10
+Lukujen tulo on 21
+```
+5. Tee ohjelma, joka lukee käyttäjältä neljä lukua ja tulostaa niiden summan ja keskiarvon. Esimerkkitulostus:
+```
+Luku 1: 2
+Luku 2: 1
+Luku 3: 6
+Luku 4: 7
+Lukujen summa on 16 ja keskiarvo 4.0
+```
