@@ -1,3 +1,9 @@
+---
+layout: post
+title: Projekti - Laskin
+date: 8.11.2021
+---
+
 # Laskin
 
 Tee yksinkertainen laskin, jota voi käyttää Python-tulkissa. Ohjelma kysyy käyttäjältä kaksi eri lukua ja sen jälkeen laskutoimituksen. Kun käyttäjä syöttää pyydetyt tiedot, ohjelma tulostaa halutun laskun tuloksen. Laskimessa pitää toimia kaikki peruslaskutoimitukset (+, -, * ja /). Alla esimerkki ohjelman toiminnasta. Kaikki ``>>``-merkin jälkeen kirjoitetut komennot ovat käyttäjän kirjoittamia.
