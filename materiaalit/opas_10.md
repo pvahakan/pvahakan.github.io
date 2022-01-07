@@ -5,6 +5,40 @@ hidden: false
 ---
 
 
+## Tehtävä xx funktioista, lisää johonkin ja laita malli splitin käytöstä
+
+Tee kolme funktiota: `eka_sana`, `toka_sana` ja `vika_sana`. Jokainen funktioista saa parametrikseen lauseen (eli merkkijonon).
+
+Funktiot palauttavat nimensä mukaisesti lauseen ensimmäisen, toisen tai viimeisen sanan.
+
+Voit olettaa jokaisessa tapauksessa, että merkkijono koostuu vähintään kahdesta sanasta, ja että sanojen välillä on aina täsmälleen yksi välilyönti, ja että merkkijonon alussa ja lopussa ei ole välilyöntejä.
+
+```python
+lause = "olipa kerran kauan sitten ohjelmoija"
+
+print(eka_sana(lause)) # olipa
+print(toka_sana(lause)) # kerran
+print(vika_sana(lause)) # ohjelmoija
+```
+
+```
+
+olipa
+kerran
+ohjelmoija
+
+```
+
+```python
+lause = "olipa kerran"
+
+print(toka_sana(lause)) # kerran
+print(vika_sana(lause)) # kerran
+```
+
+</programming-exercise>
+
+
 Tämän osion jälkeen
 
 - Tiedät, mitä lista tarkoittaa ohjelmoinnissa
