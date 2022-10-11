@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Ohjelmoinnin peruspalikat
+usemathjax: true
 date: 11.10.2022
 ---
 
