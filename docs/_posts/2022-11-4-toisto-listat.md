@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Toisto, listat
+title: Toisto
 date: 11.10.2022
 ---
 
