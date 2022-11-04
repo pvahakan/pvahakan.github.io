@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Toisto
 date: 11.10.2022
 ---

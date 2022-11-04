@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Ohjelmoinnin aloitus
 date: 11.10.2022
 ---
