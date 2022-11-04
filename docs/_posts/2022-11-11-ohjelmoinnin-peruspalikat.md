@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ohjelmoinnin peruspalikat
+title: Ohjelmoinnin aloitus
 date: 11.10.2022
 ---
 
