@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ohjelmoinnin aloitus
+title: Toisto, listat
 date: 11.10.2022
 ---
 
