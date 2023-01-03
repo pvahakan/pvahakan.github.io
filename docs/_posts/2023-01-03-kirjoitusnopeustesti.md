@@ -2,6 +2,7 @@
 layout: post
 title: Kirjoitusnopeuspeli
 date: 2023-01-03 13:00:00
+tag: Kurssi 2
 ---
 
 # Kirjoitusnopeuspeli

@@ -2,6 +2,7 @@
 layout: post
 title: "Tehtävä: Piirto-ohjelma"
 date: 2023-01-03 12:00:00
+tag: Kurssi 1
 ---
 # Piirto-ohjelma
 

@@ -9,6 +9,22 @@ layout: default
 
   {{ content }}
 
+  {% for tag in site.tags %}
+    <h3 class="post-list-heading">{{ tag[0] }}</h3>
+    <ol class="post-list">
+        {% for post in tag[1] reversed %}
+        <li>
+            <h4>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+            </h4>
+        </li>
+        {% endfor %}
+    </ol>
+    <hr>
+  {% endfor %}
+
+  <!--
+
   {%- if site.posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: "Osiot" }}</h2>
     <ol class="post-list">
@@ -27,5 +43,6 @@ layout: default
     </ol>
 
   {%- endif -%}
+  -->
 
 </div>

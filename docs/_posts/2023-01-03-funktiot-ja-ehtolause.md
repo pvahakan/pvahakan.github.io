@@ -2,6 +2,7 @@
 layout: post
 title: Funktiot ja ehtolause
 date: 2023-01-03 11:00:00
+tag: Kurssi 1
 ---
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
