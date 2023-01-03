@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Kirjoitusnopeuspeli
-date: 2023-01-03
+date: 2023-01-03 13:00:00
 ---
 
 # Kirjoitusnopeuspeli

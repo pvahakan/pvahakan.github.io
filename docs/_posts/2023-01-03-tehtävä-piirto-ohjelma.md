@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tehtävä: Piirto-ohjelma"
-date: 2023-01-03
+date: 2023-01-03 12:00:00
 ---
 # Piirto-ohjelma
 
