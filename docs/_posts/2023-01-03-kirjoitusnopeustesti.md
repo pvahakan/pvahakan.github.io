@@ -134,4 +134,153 @@ Tehtävän jälkeen ohjelman tulisi näyttää tältä:
 
 ![kirjoitustesti_2.gif](/assets/images/kirjoitusnopeustesti_osa_2.gif)
 
-**Varmista, että ohjelma toimii, jos kirjoitettavien sanojen määrää tai ohjelmassa olevaa sanalistaa muutetaan!**
+# Tehtävä 6 - Laajennettu sanalista
+
+Varmista, että ohjelma toimii riippumatta annettuja sanoja sisältävän listan koosta sekä kirjoitettavien sanojen määrästä. 
+
+1. Vaihda kirjoitettavien sanojen määräksi 8.
+2. Vaihda ohjelmaasi alla oleva lista sanoja. Sanat (100 kpl) on generoitu satunnaisesti kotimaisten kielten keskuksen (Kotus) ylläpitämästä suomen kielen sanalistasta, joka sisältää yhteensä yli 90 000 sanaa.
+
+Kun suoritat ohjelman, pitäisi ohjelman esittää sinulle satunnaisesti 8 sanaa alla olevasta listasta. **Tarkista, että sanojen määrä täsmää myös raportissa!**
+
+```python
+sanat = ['sedatiivi', 'kesakkoinen', 'selviytyjä', 'hutera', 'siemaista', 
+        'korjuun', 'haihatella', 'kuvautua', 'alempi', 'nettotulo', 
+        'velvoitetyöllistettävä', 'karambola', 'liftari', 'kuukunanmuna', 
+        'ujostelu', 'messinkipuhallin', 'teollisuusmies', 'kielentarkistus', 
+        'niemi', 'määräily', 'seinäkirjoitus', 'hopeavalmiste', 'ylivirtaus', 
+        'tatti', 'matka', 'euroaika', 'rakennustyömaa', 'pelti', 
+        'klamydiatulehdus', 'pahoinvointi', 'esilämmittää', 'hourekuva', 
+        'lerpattaa', 'avorauhanen', 'kiinnityskirja', 'puheensorina', 
+        'kapealanteinen', 'aikamatkustus', 'peräpuoli', 'kivuta', 
+        'totuudellisesti', 'älymystö', 'maakulkuneuvo', 'urheilutoimitus', 
+        'jälkiäänitys', 'koskemattomuus', 'sementtitehdas', 'veritulppa', 
+        'sienikeitto', 'tasakylkinen', 'limanuljaska', 'senaikainen', 
+        'lumppupaperi', 'karkeasanainen', 'hätäännys', 'tuohi', 
+        'kirjeenvaihtajajäsen', 'purjosipuli', 'silmityksin', 'nostokurki', 
+        'standartti', 'kung-fu', 'ruokalaji', 'pilsneripullo', 'korpiniitty', 
+        'kaupita', 'pilotti', 'lankous', 'asetussanat', 'pitkäaikaispotilas', 
+        'sotasilla', 'vaihetyö', 'soolohyökkäys', 'karvalakki', 'uurnalehto', 
+        'lemmenkohtaus', 'kateellinen', 'lainsäännös', 'joutessa', 
+        'lämpöistuin', 'suurikaliiperinen', 'juutalaislähetys', 
+        'normaalipaino', 'karvata', 'rullalautailu', 'pro', 'yrityspankki', 
+        'varmenne', 'saasteongelma', 'karttaprojektio', 'immenkalvo', 'vieri', 
+        'yksisäikeinen', 'luovutus', 'postinjakaja', 'vältellä', 'maalaustekniikka', 
+        'riuskuus', 'kanootti', 'heraldiikka']
+```
+
+# Tehtävä 7 - Kirjoituksen keston mittaaminen
+
+a) Seuraavaksi mitataan, kuinka kauan kirjoittamisessa kestää. Tarvitset keston mittaamiseen pythonin ``time``-kirjastoa, ota se käyttöön komennolla ``import time``.
+
+Tietyn ajanhetken (ikään kuin kellonaika) voit määrittää seuraavasti:
+
+```python
+import time
+
+ajanhetki = time.time()
+```
+
+Logiikka ajan mittaamisessa menee seuraavasti:
+
+- Määritä kaksi eri ajanhetkeä, milloin kirjoittaminen alkaa ja milloin se päättyy.
+- Kirjoittamisen kesto saadaan loppuhetken ja alkuhetken erotuksena. Yllä olevalla tavalla toteutettuna kesto saadaan sekunteina.
+
+b) Lisää kirjoittamisen kesto raportin tulostukseen. Tätä varten sinun tulee muokata raportin tulostusfunktiota siten, että se ottaa kolmanneksi argumentikseen kirjoittamisen keston. Funktion määrittelyn tulisi näyttää tältä:
+
+```python
+def tulosta_raportti(sanalista, kirjoitetut_sanat, kesto):
+    # Oma toteutuksesi funktiolle tähän
+```
+
+**Pyöristä kesto kahden desimaalin tarkkuuteen!** Pyöristäminen voidaan tehdä ``round``-komennolla:
+
+```python
+pitka_desimaaliluku = 1.23456789
+pyoristetty_luku = round(pitka_desimaaliluku, 3)
+print(pyoristetty_luku) # Tulostaa luvun 1.235
+```
+
+Muokkaa raportin tulostaminen siten, että raportin aluksi näkyy kirjoittamiseen kulunut aika. Kahdeksan sanan testissä suorituksen pitäisi näyttää tehtävän jälkeen seuraavalta.
+
+![kirjoitustesti_3.gif](/assets/images/kirjoitusnopeustesti_osa_3.gif)
+
+# Tehtävä 8 - Kirjoitusnopeuden laskeminen osa 1
+
+**Huom! Kun lasketaan kirjoitusnopeutta, väärin kirjoitetut sanat otetaan mukaan sellaisenaan.**
+
+Luo funktio, joka laskee kuinka monta merkkiä käyttäjä kirjoittaa minuutissa. Funktio ottaa argumentikseen listan käyttäjän kirjoittamia sanoja sekä kirjoitusajan sekunteina ja palauttaa kuinka monta merkkiä käyttäjä kirjoitti minuutissa.
+
+Funktion määrittely näyttää seuraavalta.
+
+```python
+def laske_merkit_minuutissa(kirjoitetut_sanat, kesto):
+    # Toteuta funktio tähän
+```
+
+Funktiossa tulee muuttaa sekunnit minuuteiksi sekä laskea kirjoitettujen sanojen merkit. Yksittäisen sanan merkit saat selville funktion ``len()`` avulla. Esimerkiksi
+
+```python
+print(len('unelmaduuni')) # tulostaisi 11
+```
+
+Sinun pitää siis käydä kaikki kirjoitetut sanat läpi ja tallentaa sanojen yhteispituus muuttujaan.
+
+Voit testata funktiota kommentoimalla vanhan pääohjelman pois ja lisäämällä pääohjelmaan seuraavan koodinpätkän. Jos tulostus seuraavalla koodilla on 55.0, funktio toimii todennäköisesti oikein.
+
+```python
+kirjoitetut_sanat = ['moi', 'hei', 'kyllä']
+kesto = 12 # sekunteja
+
+print(laske_merkit_minuutissa(kirjoitetut_sanat, kesto)) # Tulostaa 55.0
+```
+
+# Tehtävä 9 - Kirjoitusnopeuden laskeminen osa 2
+
+Luo toinen funktio, joka laskee sanojen määrän minuutissa. **Huom! Tässä sana tarkoittaa viiden merkin joukkoa!** Eli laskennassa jokaisessa sanassa on viisi merkkiä. Esimerkiksi sana "curlingmestaruus" sisältää yli 3 sanaa (16 merkkiä).
+
+Funktio ottaa argumentikseen listan kirjoitettuja sanoja sekä kirjoittamiseen kuluneen ajan sekunteina. Funktio palauttaa kirjoitettujen sanojen määrän minuutissa. Funktion määrittely näyttää seuraavalta:
+
+```python
+def laske_sanat_minuutissa(kirjoitetut_sanat, kesto):
+    # Toteutus tähän
+```
+
+Käytä hyväksesi edellisen tehtävän ratkaisua. Edelliseen tehtävään verrattuna tässä tehtävässä tulee selvittää, kuinka monta viiden merkin "sanaa" kirjoitetut sanat sisältävät. Voit pyöristää sanojen määrän lähimpään kokonaislukuun.
+
+Testaa funktiota seuraavalla ohjelmalla, jonka pitäisi tulostaa 10.0.
+
+```python
+kirjoitetut_sanat = ['moi', 'hei', 'kyllä']
+kesto = 12 # sekunteja
+
+print(laske_sanat_minuutissa(kirjoitetut_sanat, kesto)) # Tulostaa 10.0
+```
+
+# Tehtävä 10 - Kirjoitusnopeuden laskeminen osa 3
+
+Muokkaa raportintulostusta siten, että tulostuksessa näkyy kirjoitettujen merkkien ja sanojen määrä minuutissa.
+
+Ohjelman suorituksen tulisi näyttää kahdeksan sanan testissä seuraavalta:
+
+![kirjoitustesti_4.gif](/assets/images/kirjoitusnopeustesti_osa_4.gif)
+
+# Tehtävä 11 - Viimeinen silaus
+
+Lisää kirjoitustestiin pieni käyttöliittymä, joka tulostaa infoa testistä ja kysyy kirjoitettavien sanojen määrän.
+
+Info, jonka esimerkkiohjelma tulostaa on seuraava:
+
+```
+Tällä ohjelmalla voit testata kirjoitusnopeutesi.
+
+Ohjelma arpoo sinulle satunnaisesti haluamasi määrän sanoja
+jotka sinun tulee kirjoittaa ja hyväksyä Enterillä.
+
+Testin jälkeen ohjelma tulostaa kirjoitusnopeutesi yksiköissä
+merkkiä / min sekä sanaa / min. Yksi sana vastaa viittä (5) merkkiä.
+```
+
+Lopullisen ohjelman suoritus näyttää tältä:
+
+![kirjoitustesti_5.gif](/assets/images/kirjoitusnopeustesti_osa_5.gif)
